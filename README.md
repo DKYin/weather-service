@@ -10,9 +10,7 @@ OPEN_WEATHER_API_KEY=[api key for open weather api]
 FEELS_COLD=[fahrenheit degree where feels "cold" starts]
 FEELS_HOT=[fahrenheit degree where feels "hot" starts]
 ```
-For FEELS_COLD, if the temp is less than or equals to the value, the api will return "cold" for "feels" property.  
-For FEELS_HOT, if the temp is greater than or equals to the value, the api will return "hot" for the "feels" property.
-Any temp between FEELS_COLD and FEELS_HOT will return "moderate" for the "feels" property.
+For FEELS_COLD, if the temp is less than or equals to the value, the api will return "cold" for "feels" property.  For FEELS_HOT, if the temp is greater than or equals to the value, the api will return "hot" for the "feels" property.  Any temp between FEELS_COLD and FEELS_HOT will return "moderate" for the "feels" property.
 
 Install dependent packages
 ```bash
