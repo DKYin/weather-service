@@ -69,7 +69,7 @@ Response 200 OK:
     "condition": "Clouds",
     "temp": 89.53,
     "feels": "hot",
-    alerts: [
+    "alerts": [
     	{
 		event: 'Hurricane Warning',
 		description: 'Offshore Waters Forecast for the E Pacific'
