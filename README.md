@@ -1,5 +1,5 @@
 # weather-service
-Express api application utilizing Open Weather API to get current weather conditions at a specific lat/long.
+Express api application utilizing Open Weather API (https://openweathermap.org) to get current weather conditions at a specific lat/long.
 
 ## Getting Started Dev
 
