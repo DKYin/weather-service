@@ -1,0 +1,25 @@
+{
+  "name": "weather-service",
+  "version": "1.0.0",
+  "description": "Weather api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
+    "test": "env-cmd -f ./config/test.env jest --silent --verbose --detectOpenHandles --runInBand",
+    "coverage": "env-cmd -f ./config/test.env jest --silent --coverage"
+  },
+  "author": "David Yin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "jest": "^28.1.3",
+    "nodemon": "^2.0.19",
+    "supertest": "^6.2.4"
+  }
+}
