@@ -4,10 +4,12 @@ Express api application utilizing Open Weather API to get current weather condit
 ## Getting Started Dev
 
 Create a config/dev.env file with the following configurations:
+```configurations
 PORT=[port to run app on]
 OPEN_WEATHER_API_KEY=[api key for open weather api]
 FEELS_COLD=[fahrenheit degree where feels "cold" starts]
 FEELS_HOT=[fahrenheit degree where feels "hot" starts]
+```
 
 Install dependent packages
 ```bash
