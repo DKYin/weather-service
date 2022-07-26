@@ -48,10 +48,11 @@ Response 200 OK:
     "lat": 33.9412127,
     "long": -84.2135309
 }
-```
+
 city is required
 state is required
 country is required
+```
 If any of these fields are omitted, a 400 Bad Request will be returned.
 
 404 Not Found will return if city, state, and country combination does not return a valid location.
@@ -76,8 +77,9 @@ Response 200 OK:
         ...
     ]
 }
-```
+
 lat is required (between -90 and 90)
 long is required (between -180 and 180)
+```
 If any of these fields are omitted or go outside of allowed range, a 400 Bad Request will be returned.
 
