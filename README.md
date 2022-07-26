@@ -71,8 +71,8 @@ Response 200 OK:
     "feels": "hot",
     "alerts": [
     	{
-		event: 'Hurricane Warning',
-		description: 'Offshore Waters Forecast for the E Pacific'
+		"event": "Hurricane Warning",
+		"description": "Offshore Waters Forecast for the E Pacific"
 	},
         ...
     ]
