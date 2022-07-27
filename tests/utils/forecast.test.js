@@ -3,7 +3,7 @@ const forecast = require('../../src/utils/forecast')
 
 jest.mock('../../src/utils/open-weather')
 
-test('Should return null when no location not found', async () => {
+test('Should return null when location not found', async () => {
 	onecall.mockReturnValue(Promise.resolve(null))
 
 	const weather = await forecast(20.3184, -105.3216)
@@ -11,7 +11,7 @@ test('Should return null when no location not found', async () => {
 	expect(weather).toBeNull()
 })
 
-test('Should return filtered location when location found', async () => {
+test('Should return weather condition when location found', async () => {
 	onecall.mockReturnValue(Promise.resolve({
 		lat: 20.3184,
 		lon: -105.3216,

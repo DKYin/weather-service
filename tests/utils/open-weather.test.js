@@ -16,7 +16,7 @@ test('Should reject when error connection to onecall service', async () => {
     await expect(onecall(20.3184, -105.3216, 'minutely,hourly,daily', 'imperial', 'apiKey')).rejects.toMatch('Unable to connect to weather service.')
 })
 
-test('Should resolve when no location match returned from onecall service', async () => {
+test('Should be null when no location match returned from onecall service', async () => {
     request.mockImplementation((options, callback) => {
         callback(undefined, { statusCode: 400 }, {
             cod: "400",
@@ -29,7 +29,7 @@ test('Should resolve when no location match returned from onecall service', asyn
     expect(weather).toBeNull()
 })
 
-test('Should resolve when weather returned from onecall service', async () => {
+test('Should return weather when weather returned from onecall service', async () => {
     request.mockImplementation((options, callback) => {
         callback(undefined, { statusCode: 200 }, {
             lat: 20.3184,
@@ -142,7 +142,7 @@ test('Should reject when error connection to geo service', async () => {
     await expect(geo('lilburn', 'ga', 'us', 1, 'apiKey')).rejects.toMatch('Unable to connect to geocoding service.')
 })
 
-test('Should resolve when no location match returned from geo service', async () => {
+test('Should return empty array when no location match returned from geo service', async () => {
     request.mockImplementation((options, callback) => {
         callback(undefined, { statusCode: 200 }, [])
     })
@@ -152,7 +152,7 @@ test('Should resolve when no location match returned from geo service', async ()
     expect(weather).toEqual([])
 })
 
-test('Should resolve when location match returned from geo service', async () => {
+test('Should return location when location match returned from geo service', async () => {
     request.mockImplementation((options, callback) => {
         callback(undefined, { statusCode: 200 }, [{
             name: 'Lilburn',
