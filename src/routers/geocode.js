@@ -5,7 +5,8 @@ const geocode = require('../utils/geocode')
 
 const router = new express.Router()
 
-router.get('/geocode', validate([
+router.get('/geocode', 
+    validate([
         query('city').exists().withMessage('required'),
         query('state').exists().withMessage('required'),
         query('country').exists().withMessage('required'),

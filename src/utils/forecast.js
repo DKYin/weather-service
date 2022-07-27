@@ -19,9 +19,9 @@ const forecast = async (lat, long) => {
 }
 
 const getFeels = (temperature) => {
-    if (temperature <= parseInt(process.env.FEELS_COLD)) {
+    if (temperature <= Number(process.env.FEELS_COLD)) {
         return 'cold'
-    } else if (temperature >= parseInt(process.env.FEELS_HOT)) {
+    } else if (temperature >= Number(process.env.FEELS_HOT)) {
         return 'hot'
     } else {
         return 'moderate'

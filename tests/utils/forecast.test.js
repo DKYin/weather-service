@@ -117,14 +117,15 @@ test('Should return Error for error', async () => {
 
 describe("Temperature feels", () => {
 	it.each([
-		[parseInt(process.env.FEELS_COLD) - 1, 'cold'],
-		[parseInt(process.env.FEELS_COLD), 'cold'],
-		[parseInt(process.env.FEELS_COLD) + 1, 'moderate'],
-		[parseInt(process.env.FEELS_HOT) - 1, 'moderate'],
-		[parseInt(process.env.FEELS_HOT), 'hot'],
-		[parseInt(process.env.FEELS_HOT) + 1, 'hot']
+		['50.91', 'cold'],
+		['50.92', 'cold'],
+		['50.93', 'moderate'],
+		['60', 'moderate'],
+		['80.11', 'moderate'],
+		['80.12', 'hot'],
+		['80.13', 'hot']
 	])(
-		'%i degrees should feel %s',
+		'%s degrees should feel %s',
 		async (temp, feels) => {
 			onecall.mockReturnValue(Promise.resolve({
 				at: 20.3184,
@@ -135,7 +136,7 @@ describe("Temperature feels", () => {
 					dt: 1658005746,
 					sunrise: 1657974604,
 					sunset: 1658022254,
-					temp,
+					temp: Number(temp),
 					feels_like: 87.21,
 					pressure: 1010,
 					humidity: 66,

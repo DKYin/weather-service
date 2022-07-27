@@ -5,13 +5,16 @@ const forecast = require('../utils/forecast')
 
 const router = new express.Router()
 
-router.get('/forecast', validate([
+router.get('/forecast', 
+    validate([
         query('lat')
             .exists().withMessage('required').bail()
-            .custom((value) => value >= -90 && value <= 90).withMessage('invalid'),
+            .not().isEmpty().withMessage('invalid').bail()
+            .custom((value) => Number(value) >= -90 && Number(value) <= 90).withMessage('invalid'),
         query('long')
             .exists().withMessage('required').bail()
-            .custom((value) => value >= -180 && value <= 180).withMessage('invalid'),
+            .not().isEmpty().withMessage('invalid').bail()
+            .custom((value) => Number(value) >= -180 && Number(value) <= 180).withMessage('invalid'),
     ]),
     async (req, res) => {
         const { lat, long } = req.query
