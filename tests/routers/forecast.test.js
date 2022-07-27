@@ -171,7 +171,9 @@ describe("Lat validation", () => {
         ['0', 200],
 		['90', 200],
 		['90.1', 400],
-        ['?', 400]
+        ['?', 400],
+        ['34.2542084a', 400],
+        ['', 400]
 	])(
 		'%s lat should return %i',
 		async (lat, statusCode) => {
@@ -204,7 +206,9 @@ describe("Long validation", () => {
         ['0', 200],
 		['180', 200],
 		['180.1', 400],
-        ['?', 400]
+        ['?', 400],
+        ['-110.029832a', 400],
+        ['', 400]
 	])(
 		'%s long should return %i',
 		async (long, statusCode) => {
