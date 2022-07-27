@@ -11,7 +11,7 @@ test('Should return null when no location found', async () => {
     expect(location).toBeNull()
 })
 
-test('Should return filtered location when location found', async () => {
+test('Should return lat/long when location found', async () => {
     geo.mockReturnValue(Promise.resolve([{
         name: 'Lilburn',
         lat: 33.8901036,
